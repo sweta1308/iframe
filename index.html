@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
-    <button onclick="alert(`clicked!`)">Click me!</button>
-    
-</body>
+  </head>
+  <body>
+    <button id="sendMessage">Click me!</button>
+    <script>
+      var button = document.querySelector("#sendMessage");
+      button.addEventListener("click", function () {
+        // Send `message` to the parent using the postMessage method on the window.parent reference.
+        window.parent.postMessage("Hello World", "*");
+      });
+    </script>
+  </body>
 </html>
